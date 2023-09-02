@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Comparar</string>
+    <string name="comparador_de_texto">Comparador de Texto</string>
+    <string name="comparar">Comparar</string>
+    <string name="vacio" />
+    <string name="ingrese_el_texto">Ingrese el texto</string>
+    <string name="ingrese_el_otro_texto">Ingrese el otro texto</string>
+    <string name="comprar_texto">Comprar texto</string>
+    <string name="comparar_texto">Comparar texto</string>
+</resources>
