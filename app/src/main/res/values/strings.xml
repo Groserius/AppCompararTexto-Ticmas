@@ -7,4 +7,8 @@
     <string name="ingrese_el_otro_texto">Ingrese el otro texto</string>
     <string name="comprar_texto">Comprar texto</string>
     <string name="comparar_texto">Comparar texto</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="estrella">Estrella</string>
+    <string name="mariobros">MarioBros</string>
+    <string name="mov">movimiento</string>
 </resources>

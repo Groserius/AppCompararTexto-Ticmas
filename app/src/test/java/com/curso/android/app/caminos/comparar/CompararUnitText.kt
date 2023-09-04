@@ -1,25 +1,28 @@
 package com.curso.android.app.caminos.comparar
 
 
-import org.junit.Assert
 import org.junit.Test
+import org.junit.Assert.*
 
 class CompararUnitText {
-    
-    fun comparar(texto1: String, texto2: String): Boolean {
-        return texto1.equals(texto2, ignoreCase = true)
 
+    @Test
+    fun testEqualStrings() {
+        val string1 = "Casa"
+        val string2 = "casa"
+        val result = comparar(string1.lowercase().replace(" ", ""),
+            string2.lowercase().replace(" ", ""))
+        assertEquals(true, result)
     }
-        @Test
-        fun testCompararTexto() {
-
-            val result1 = comparar("hola", "hola")
-            Assert.assertTrue(result1)
-
-
-            val result2 = comparar("hola", "adiós")
-            Assert.assertFalse(result2)
-
-        }
-
+    @Test
+    fun testDifferentStrings() {
+        val string1 = "Casa"
+        val string2 = "auto"
+        val result = comparar(string1.lowercase().replace(" ", ""),
+            string2.lowercase().replace(" ", ""))
+        assertEquals(false, result)
+    }
+    private fun comparar(string1: String, string2: String): Boolean {
+        return string1 == string2
+    }
 }

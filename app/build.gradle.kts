@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.curso.android.app.caminos.comparar"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.curso.android.app.caminos.comparar"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,7 +37,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -45,5 +45,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.airbnb.android:lottie:6.1.0")
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")
 
 }
