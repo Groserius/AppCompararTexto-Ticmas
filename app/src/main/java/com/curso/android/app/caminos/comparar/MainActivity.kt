@@ -5,16 +5,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.lifecycle.ViewModelProvider
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var text1: EditText
-    private lateinit var text2: EditText
-    private lateinit var btncomparar: Button
-    private lateinit var btnlimpiar: Button
-    private lateinit var txtcomparar: TextView
-
+    lateinit var text1: EditText
+    lateinit var text2: EditText
+    lateinit var btncomparar: Button
+    lateinit var btnlimpiar: Button
+    lateinit var txtcomparar: TextView
+    lateinit var viewModel: TextViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,11 +25,14 @@ class MainActivity : AppCompatActivity() {
         btncomparar = findViewById(R.id.btncomparar)
         txtcomparar = findViewById(R.id.txtcomparar)
         btnlimpiar = findViewById(R.id.btnlimpiar)
-
+        viewModel = ViewModelProvider(this)[TextViewModel::class.java]
 
         btncomparar.setOnClickListener {
-            comparar()
-        }
+                val text1 = text1.text.toString().trim().lowercase()
+                val text2 = text2.text.toString().trim().lowercase()
+                val resultado = viewModel.comparar(text1, text2)
+                txtcomparar.text = resultado
+            }
 
         btnlimpiar.setOnClickListener {
             limpiar()
@@ -37,22 +40,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun comparar() {
-            val texto1: String = text1.text.toString().trim().lowercase()
-            val texto2: String = text2.text.toString().trim().lowercase()
-
-           val resultado = if (texto1 == texto2) {
-                "Los textos son iguales."
-            } else {
-                "Los textos son distintos."
-            }
-        txtcomparar.text = resultado
-        }
     private fun limpiar() {
             text1.text.clear()
             text2.text.clear()
             txtcomparar.text = ""
             text1.requestFocus()
         }
+
 }
 

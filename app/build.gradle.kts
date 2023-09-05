@@ -45,7 +45,8 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("com.airbnb.android:lottie:6.1.0")
     testImplementation ("androidx.arch.core:core-testing:2.2.0")
-
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    testImplementation ("com.google.truth:truth:1.1.3")
 }
